@@ -10,6 +10,7 @@ import 'package:order_traking/features/auth/presentation/screens/login/login.dar
 import 'package:order_traking/features/auth/presentation/screens/regester/regester.dart';
 import 'package:order_traking/features/home/presentation/screens/home.dart';
 import 'package:order_traking/features/onboarding/onboardingScreen.dart';
+import 'package:order_traking/features/orders/add_order/prsentation/screens/add_order.dart';
 import 'package:order_traking/splash.dart';
 
 void main() async{
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
           "signUp":(context)=>RegisterScreen(),
           "onboarding":(context)=>Onboardingscreen(),
           "home":(context)=>HomeScreen(),
+          "addOrder":(context)=>AddOrder(),
       
         },
       ),
