@@ -1,4 +1,10 @@
 class Validators{
+  static String? ordinaryValidator(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return 'Please enter your requiredData';
+    }
+    return null;
+  }
   // Validator للبريد الإلكتروني
   static String? emailValidator(String? value) {
     if (value == null || value.trim().isEmpty) {

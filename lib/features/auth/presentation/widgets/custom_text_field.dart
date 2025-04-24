@@ -7,6 +7,8 @@ class CustomTextField extends StatefulWidget {
   final bool isPassword;
   final String? errorText;
   final String? Function(String?)? validator;
+  final void Function()? onTap;
+  final bool? readOnly;
 
   const CustomTextField({
     super.key,
@@ -16,6 +18,8 @@ class CustomTextField extends StatefulWidget {
     this.isPassword = false,
     this.errorText,
     this.validator,
+    this.onTap,
+    this.readOnly,
   });
 
   @override
@@ -28,6 +32,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      readOnly:widget.readOnly ??false,
+      onTap:widget.onTap ,
       controller: widget.controller,
       keyboardType: widget.keyboardType,
       obscureText: widget.isPassword && !_isPasswordVisible,
