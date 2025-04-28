@@ -15,6 +15,7 @@ import 'package:order_traking/features/onboarding/onboardingScreen.dart';
 import 'package:order_traking/features/orders/add_order/data/repo_impl/add_order_repo_imp.dart';
 import 'package:order_traking/features/orders/add_order/prsentation/order_bloc/add_order_bloc.dart';
 import 'package:order_traking/features/orders/add_order/prsentation/screens/add_order.dart';
+import 'package:order_traking/features/orders/ordaratiy/screens/my_order.dart';
 import 'package:order_traking/splash.dart';
 
 void main() async{
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
           "home":(context)=>HomeScreen(),
           "addOrder":(context)=>AddOrder(),
           "distinationLocation":(context)=>AddOrder(),
+          "myOrders":(context)=>MyOrders(),
       
         },
       ),

@@ -41,7 +41,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, "myOrders");
+              },
             ),
             // SizedBox(width: 30,),
             InkWell(

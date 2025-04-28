@@ -61,7 +61,7 @@ class _AddOrderState extends State<AddOrder> {
                 content: Text('order added successfuly',
                   style: TextStyle(color: Colors.white),
                 ),
-                backgroundColor: Colors.red,
+                backgroundColor: Colors.green,
                 duration: Duration(seconds: 3),
               ),
             );

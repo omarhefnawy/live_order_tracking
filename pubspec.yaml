@@ -54,6 +54,7 @@ dependencies:
   intl: ^0.20.2
   place_picker_google: ^0.0.16
   flutter_dotenv: ^5.2.1
+  flutter_polyline_points: ^2.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

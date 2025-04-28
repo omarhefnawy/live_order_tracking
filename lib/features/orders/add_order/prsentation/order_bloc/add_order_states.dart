@@ -13,4 +13,17 @@ class AddingOrderFail extends AddOrderStates {
   AddingOrderFail(this.error);
 
 }
+class GetOrderLoading extends AddOrderStates {}
+class GetOrderSuccess extends AddOrderStates {
+ final List<AddOrderModel> model;
+ GetOrderSuccess(this.model);
 
+}
+
+class GetOrderFail extends AddOrderStates {
+  final String error;
+
+  GetOrderFail(this.error);
+
+}
+class OrderDeleveredSuccess extends AddOrderStates {}
