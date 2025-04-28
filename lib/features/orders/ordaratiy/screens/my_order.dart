@@ -15,43 +15,57 @@ class MyOrders extends StatefulWidget {
 class _MyOrdersState extends State<MyOrders> {
   @override
   void initState() {
-    // TODO: implement initState
+    super.initState();
     BlocProvider.of<AddOrderCubit>(context).getUserOrders();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorConstants.backgroundColor,
       body: BlocBuilder<AddOrderCubit, AddOrderStates>(
         builder: (context, state) {
-          if(state is GetOrderLoading)
-            {
-              return Center(child: CircularProgressIndicator());
-            }
-          else if(state is GetOrderFail)
-            {
-              return Center(child: Text("Error getting the data ${state.error}"));
-            }
-          else if(state is GetOrderSuccess)
-            {
-           final orders= state.model;
-           if(orders.isEmpty)
-             {
-                return Center(child: Text("No orders available"));
-             }
-           return ListView.builder(
-             itemCount: orders.length,
-               itemBuilder: (context, index) {
-               final order=orders[index];
-               return OrderTile(order: order);
-               },
+          if (state is GetOrderLoading) {
+            return const Center(
+              child: CircularProgressIndicator(),
             );
-            }
-          else
-            {
-              return Center(child: Text("NOT handeled Error"),);
+          }
+          else if (state is GetOrderFail) {
+            return Center(
+              child: Text(
+                "Error getting the data: ${state.error}",
+                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+            );
+          }
+          else if (state is GetOrderSuccess) {
+            final orders = state.model;
+
+            if (orders.isEmpty) {
+              return const Center(
+                child: Text(
+                  "No orders available",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              );
             }
 
+            return ListView.builder(
+              itemCount: orders.length,
+              itemBuilder: (context, index) {
+                final order = orders[index];
+                return OrderTile(order: order);
+              },
+            );
+          }
+          else {
+            return const Center(
+              child: Text(
+                "Unhandled Error",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+            );
+          }
         },
       ),
     );

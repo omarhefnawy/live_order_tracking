@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
           "/":(context)=>SplashScreen(),
           "login":(context)=>LoginScreen(),
           "signUp":(context)=>RegisterScreen(),
-          "onboarding":(context)=>Onboardingscreen(),
+          "onboarding":(context)=>OnboardingScreen(),
           "home":(context)=>HomeScreen(),
           "addOrder":(context)=>AddOrder(),
           "distinationLocation":(context)=>AddOrder(),

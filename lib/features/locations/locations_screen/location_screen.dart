@@ -26,7 +26,7 @@ class _LocationScreenState extends State<LocationScreen> {
   Set<Polyline> _polylines = {};
   late Position _userposition;
   late Uint8List unitImages;
-  String image = 'assets/final.jpg';
+  String image = 'assets/pin.png';
   late StreamSubscription<Position> _positionStreamSubscription;
 
   // Method to load data (images and markers)
